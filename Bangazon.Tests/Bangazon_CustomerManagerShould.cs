@@ -5,6 +5,8 @@ namespace Bangazon.Tests
 {
     public class CustomerManagerShould
     {
+        
+
         [Fact]
         public void AddNewCustomer()
         {
