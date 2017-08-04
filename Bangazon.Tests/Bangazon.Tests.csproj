@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Bangazon\Bangazon.csproj" />
+    <ProjectReference Include="..\Bangazon\Bangazon.csproj" />
   </ItemGroup>
 
 </Project>
