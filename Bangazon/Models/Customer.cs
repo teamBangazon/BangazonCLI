@@ -22,8 +22,8 @@ namespace Bangazon.Models
         public int ZipCode { get; set; }
         public string PhoneNumber { get; set; }
 
-         public Customer(string customerFirstName, string customerLastName, string customerStreet, string customerCity, string customerState, int customerZipCode, string customerPhoneNumber)
-         {
+        public Customer(string customerFirstName, string customerLastName, string customerStreet, string customerCity, string customerState, int customerZipCode, string customerPhoneNumber)
+        {
             FirstName = customerFirstName;
             LastName = customerLastName;
             Street = customerStreet;
@@ -31,11 +31,6 @@ namespace Bangazon.Models
             State = customerState;
             ZipCode = customerZipCode;
             PhoneNumber = customerPhoneNumber;
-         }
+        }
     }
-
-   
-
-
-
 }
