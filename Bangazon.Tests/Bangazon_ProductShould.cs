@@ -14,7 +14,7 @@ namespace Bangazon.Tests
         }
 
         [Fact]
-        public void addCustomer()
+        public void addProduct()
         {
             Assert.Equal(_product.CustomerId, 1);
             Assert.Equal(_product.Name, "Cheese Nip");
