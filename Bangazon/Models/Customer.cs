@@ -32,5 +32,9 @@ namespace Bangazon.Models
             ZipCode = customerZipCode;
             PhoneNumber = customerPhoneNumber;
         }
+
+        public Customer()
+        {
+        }
     }
 }
