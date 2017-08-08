@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BangazonCLI.Data
 {
-    public static class DbInitializer
+    public static class DbInitialize
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {

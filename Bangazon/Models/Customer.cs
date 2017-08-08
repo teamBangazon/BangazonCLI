@@ -1,3 +1,5 @@
+using System;
+
 //Class: Customer
 //Purpose: Used to store Customer Information
 //Author: Team One to What
