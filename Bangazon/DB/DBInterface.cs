@@ -87,9 +87,10 @@ namespace Bangazon
                         dbcmd.CommandText = $@"create table customer (
                             `id`        integer NOT NULL PRIMARY KEY AUTOINCREMENT,
                             `firstname` string not null,
-                            `lastname`  stting not null,
+                            `lastname`  string not null,
                             `street`    string not null,
                             `city`      string not null,
+                            `state`      string not null,
                             `zipcode`     interger not null,
                             `phonenumber`   string not null
                         )";
