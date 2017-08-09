@@ -1,3 +1,5 @@
+using System;
+
 //Class: Customer
 //Purpose: Used to store Customer Information
 //Author: Team One to What
@@ -14,6 +16,7 @@ namespace Bangazon.Models
 {
     public class Customer
     {
+        public int id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Street { get; set; }
@@ -22,8 +25,8 @@ namespace Bangazon.Models
         public int ZipCode { get; set; }
         public string PhoneNumber { get; set; }
 
-         public Customer(string customerFirstName, string customerLastName, string customerStreet, string customerCity, string customerState, int customerZipCode, string customerPhoneNumber)
-         {
+        public Customer(string customerFirstName, string customerLastName, string customerStreet, string customerCity, string customerState, int customerZipCode, string customerPhoneNumber)
+        {
             FirstName = customerFirstName;
             LastName = customerLastName;
             Street = customerStreet;
@@ -31,11 +34,10 @@ namespace Bangazon.Models
             State = customerState;
             ZipCode = customerZipCode;
             PhoneNumber = customerPhoneNumber;
-         }
+        }
+
+        public Customer()
+        {
+        }
     }
-
-   
-
-
-
 }
