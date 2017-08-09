@@ -24,6 +24,9 @@ namespace Bangazon.Managers
         Console.Write ("> ");
         New.LastName = Console.ReadLine();
         Console.WriteLine ("Enter customer city");
+        Console.Write ("> ");    
+        New.Street = Console.ReadLine();
+        Console.WriteLine ("Enter customer Street");
         Console.Write ("> ");
         New.City = Console.ReadLine();
         Console.WriteLine ("Enter customer state");
