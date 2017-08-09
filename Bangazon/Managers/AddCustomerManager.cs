@@ -23,13 +23,13 @@ namespace Bangazon.Managers
         Console.WriteLine ("Enter customer last name");
         Console.Write ("> ");
         New.LastName = Console.ReadLine();
-        Console.WriteLine ("Enter customer city");
+        Console.WriteLine ("Enter customer Street");
         Console.Write ("> ");    
         New.Street = Console.ReadLine();
-        Console.WriteLine ("Enter customer Street");
+        Console.WriteLine ("Enter customer City");
         Console.Write ("> ");
         New.City = Console.ReadLine();
-        Console.WriteLine ("Enter customer state");
+        Console.WriteLine ("Enter customer State");
         Console.Write ("> ");
         New.State = Console.ReadLine();
         Console.WriteLine ("Enter customer postal code");
