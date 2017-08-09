@@ -109,6 +109,38 @@ namespace Bangazon
                 _connection.Close();
             }
         }
+        public void CheckPaymentTypeTable()
+        {
+            using (_connection)
+            {
+                _connection.Open();
+                SqliteCommand dbcmd = _connection.CreateCommand();
 
+                dbcmd.CommandText = $@"select id from customer";
+
+                try
+                {
+                    using (SqliteDataReader reader = dbcmd.ExecuteReader())
+                    {
+                        Console.WriteLine("payment type table should exist");
+                    }
+                    dbcmd.Dispose();
+                }
+                catch (Microsoft.Data.Sqlite.SqliteException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    if (ex.Message.Contains("no such table"))
+                    {
+                        dbcmd.CommandText = $@"create table PaymentType (
+                            `PaymentMethod` string NOT NULL PRIMARY KEY AUTOINCREMENT,
+                            `AccountNumber` int not null
+                        )";
+                        dbcmd.ExecuteNonQuery();
+                        dbcmd.Dispose();
+                    }
+                }
+                _connection.Close();
+            }
+        }
     }
 } 
