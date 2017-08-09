@@ -1,6 +1,14 @@
 using System;
 using Microsoft.Data.Sqlite;
 
+//Class: Database Interface
+//Purpose: Accepts SQL formatted strings and Interacts directly with SQL database
+//Author: Team One to What
+//Methods:
+//  Query: Handles SQL SELECT calls
+//  Insert: Handles SQL INSERT calls
+//  CheckCustomerTable: Checks to see if Customer Table Exists and creates it if not.
+
 
 namespace Bangazon
 {
