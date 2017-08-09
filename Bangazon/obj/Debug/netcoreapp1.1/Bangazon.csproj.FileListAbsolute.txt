@@ -1,8 +1,0 @@
-/Users/Dylan/workspace/BangazonCLI/Bangazon/bin/Debug/netcoreapp1.1/Bangazon.deps.json
-/Users/Dylan/workspace/BangazonCLI/Bangazon/bin/Debug/netcoreapp1.1/Bangazon.runtimeconfig.json
-/Users/Dylan/workspace/BangazonCLI/Bangazon/bin/Debug/netcoreapp1.1/Bangazon.runtimeconfig.dev.json
-/Users/Dylan/workspace/BangazonCLI/Bangazon/obj/Debug/netcoreapp1.1/Bangazon.AssemblyInfo.cs
-/Users/Dylan/workspace/BangazonCLI/Bangazon/bin/Debug/netcoreapp1.1/Bangazon.dll
-/Users/Dylan/workspace/BangazonCLI/Bangazon/bin/Debug/netcoreapp1.1/Bangazon.pdb
-/Users/Dylan/workspace/BangazonCLI/Bangazon/obj/Debug/netcoreapp1.1/Bangazon.dll
-/Users/Dylan/workspace/BangazonCLI/Bangazon/obj/Debug/netcoreapp1.1/Bangazon.pdb
