@@ -135,7 +135,8 @@ namespace Bangazon
                             `PaymentTypeId` integer NOT NULL PRIMARY KEY AUTOINCREMENT,
                             `CustomerId` integer NOT NULL,
                             `PaymentMethod` string NOT NULL,
-                            `AccountNumber` integer NOT NULL
+                            `AccountNumber` integer NOT NULL,
+                            FOREIGN KEY(`CustomerId`) REFERENCES `customer`(`id`) 
                         )";
                         dbcmd.ExecuteNonQuery();
                         dbcmd.Dispose();
