@@ -12,30 +12,21 @@ using Bangazon.StringBuilders;
 
 namespace Bangazon.Managers
 {
-    public class AddProductManager
+    public class ProductManager
     {
-        public static void AddProduct(AddProductStringBuilder SB)
+    private DatabaseInterface _db;
+    public ProductManager(DatabaseInterface db)
+    {
+        _db = db;
+    }
+        public int AddProduct(Product _prod, Customer _cust)
         {
-        Product New = new Product();
-        Console.WriteLine ("Enter CustomerId.");
-        Console.Write ("> ");
-        New.CustomerId = Int32.Parse(Console.ReadLine());
-        Console.WriteLine ("Enter product name.");
-        Console.Write ("> ");
-        New.Name = Console.ReadLine();
-        Console.WriteLine ("Enter product description.");
-        Console.Write ("> ");
-        New.Description = Console.ReadLine();
-        Console.WriteLine ("Enter product price.");
-        Console.Write ("> ");    
-        New.Price = Int32.Parse(Console.ReadLine());
-        Console.WriteLine ("Enter product type");
-        Console.Write ("> ");
-        New.ProductType = Console.ReadLine();   
-        
-        SB.AddProduct(New);
-        Menus.MainMenu();
-        }      
+            string productString = $"INSERT into Product VALUES (null, {_cust.id}, '{_prod.Name}', '{_prod.Description}', {_prod.Price}, '{_prod.ProductType}');";
+            var Y = _db.Insert(productString);
+            return Y;
+        }
+
+
     }
 
 }

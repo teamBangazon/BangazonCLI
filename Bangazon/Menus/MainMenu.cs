@@ -18,9 +18,9 @@ namespace Bangazon
             // Seed the database if none exists
             DatabaseInterface db = new DatabaseInterface("BANGAZONCLI_DB");
             db.CheckCustomerTable();
-            AddCustomerStringBuilder _ACSB = new AddCustomerStringBuilder(db);
+            AddCustomerMenu _ACSB = new AddCustomerMenu();
             db.CheckProductTable();
-            AddProductStringBuilder _APSB = new AddProductStringBuilder(db);
+            AddProductMenu _APSB = new AddProductMenu();
 
             
             Console.WriteLine ("*************************************************");
@@ -38,11 +38,11 @@ namespace Bangazon
             // If option 1 was chosen, create a new customer account
             if (choice == 1)
             {
-                AddCustomerManager.AddCustomer(_ACSB);
+                _ACSB.AddCustomerStringBuilder(new CustomerManager(db)); // public void AddCustomerStringBuilder
             }
             if (choice == 4)
             {
-                AddProductManager.AddProduct(_APSB);
+                _APSB.AddProductStringBuilder(new ProductManager(db));  //public void AddProductStringBuilder
             }
                    
         

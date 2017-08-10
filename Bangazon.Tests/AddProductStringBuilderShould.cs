@@ -1,4 +1,5 @@
 using System;
+using Bangazon.Managers;
 using Bangazon.Models;
 using Bangazon.StringBuilders;
 using Xunit;

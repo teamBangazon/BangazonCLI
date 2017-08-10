@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Bangazon.Managers;
 using Bangazon.Models;
 
 //
@@ -7,21 +8,31 @@ using Bangazon.Models;
 
 namespace Bangazon.StringBuilders
 {
-    public class AddProductStringBuilder
+
+    public class AddProductMenu
     {
-    private DatabaseInterface _db;
-    public AddProductStringBuilder(DatabaseInterface db)
-    {
-        _db = db;
-    }
-        public int AddProduct(Product _prod)
+        
+        public void AddProductStringBuilder(ProductManager SB)
         {
-            string productString = $"INSERT into Product VALUES ('{_prod.CustomerId}', '{_prod.Name}', '{_prod.Description}', '{_prod.Price}', '{_prod.ProductType}');";
-            var Y = _db.Insert(productString);
-            return Y;
+        Product newProduct = new Product();
+        Customer newCustomer = new Customer();
+        Console.WriteLine ("Enter CustomerId.");
+        Console.Write ("> ");
+        newProduct.CustomerId = Int32.Parse(Console.ReadLine());
+        Console.WriteLine ("Enter product name.");
+        Console.Write ("> ");
+        newProduct.Name = Console.ReadLine();
+        Console.WriteLine ("Enter product description.");
+        Console.Write ("> ");
+        newProduct.Description = Console.ReadLine();
+        Console.WriteLine ("Enter product price.");
+        Console.Write ("> ");    
+        newProduct.Price = Int32.Parse(Console.ReadLine());
+        Console.WriteLine ("Enter product type");
+        Console.Write ("> ");
+        newProduct.ProductType = Console.ReadLine();
+        SB.AddProduct(newProduct, newCustomer);
+        Menus.MainMenu();
         }
-
-
     }
-
 }

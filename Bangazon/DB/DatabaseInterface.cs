@@ -117,7 +117,7 @@ namespace Bangazon
                 _connection.Open();
                 SqliteCommand dbcmd = _connection.CreateCommand();
 
-                dbcmd.CommandText = $@"select CustomerId from product";
+                dbcmd.CommandText = $@"select id from product";
 
                 try
                 {
@@ -133,11 +133,13 @@ namespace Bangazon
                     if (ex.Message.Contains("no such table"))
                     {
                         dbcmd.CommandText = $@"create table product (
-                            `customerid`    integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                            `id`    integer NOT NULL PRIMARY KEY AUTOINCREMENT,
                             `name`  string not null,
                             `description`   string not null,
                             `price`    string not null,
-                            `producttype`   string not null
+                            `producttype`   string not null,
+                            `customerId` integer not null,
+                             FOREIGN KEY(`customerId`) REFERENCES `customer`(`id`)
                         )";
                         dbcmd.ExecuteNonQuery();
                         dbcmd.Dispose();
