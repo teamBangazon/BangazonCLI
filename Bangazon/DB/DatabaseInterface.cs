@@ -110,5 +110,42 @@ namespace Bangazon
             }
         }
 
+         public void CheckProductTable()
+        {
+            using (_connection)
+            {
+                _connection.Open();
+                SqliteCommand dbcmd = _connection.CreateCommand();
+
+                dbcmd.CommandText = $@"select CustomerId from product";
+
+                try
+                {
+                    using (SqliteDataReader reader = dbcmd.ExecuteReader())
+                    {
+                        Console.WriteLine("reading db, tbl should exist");
+                    }
+                    dbcmd.Dispose();
+                }
+                catch (Microsoft.Data.Sqlite.SqliteException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    if (ex.Message.Contains("no such table"))
+                    {
+                        dbcmd.CommandText = $@"create table product (
+                            `customerid`    integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                            `name`  string not null,
+                            `description`   string not null,
+                            `price`    string not null,
+                            `producttype`   string not null
+                        )";
+                        dbcmd.ExecuteNonQuery();
+                        dbcmd.Dispose();
+                    }
+                }
+                _connection.Close();
+            }
+        }
+
     }
 } 

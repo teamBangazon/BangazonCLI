@@ -19,12 +19,15 @@ namespace Bangazon
             DatabaseInterface db = new DatabaseInterface("BANGAZONCLI_DB");
             db.CheckCustomerTable();
             AddCustomerStringBuilder _ACSB = new AddCustomerStringBuilder(db);
+            db.CheckProductTable();
+            AddProductStringBuilder _APSB = new AddProductStringBuilder(db);
 
             
             Console.WriteLine ("*************************************************");
             Console.WriteLine ("Welcome to Bangazon! Command Line Ordering System");
             Console.WriteLine ("*************************************************");
             Console.WriteLine ("1. Create a customer account");
+            Console.WriteLine ("4. Add product to shopping customer");
             Console.Write ("> ");
             
 
@@ -35,8 +38,12 @@ namespace Bangazon
             // If option 1 was chosen, create a new customer account
             if (choice == 1)
             {
-             AddCustomerManager.AddCustomer(_ACSB);
-            }  
+                AddCustomerManager.AddCustomer(_ACSB);
+            }
+            if (choice == 4)
+            {
+                AddProductManager.AddProduct(_APSB);
+            }
                    
         
         }

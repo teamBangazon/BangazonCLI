@@ -27,6 +27,10 @@ namespace Bangazon.Models
             Price = productPrice;
             ProductType = productType;
          }
+         public Product()
+        {
+            
+        }
     }
 
    
