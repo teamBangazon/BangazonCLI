@@ -99,7 +99,7 @@ namespace Bangazon
                             `street`    string not null,
                             `city`      string not null,
                             `state`      string not null,
-                            `zipcode`     interger not null,
+                            `zipcode`     integer not null,
                             `phonenumber`   string not null
                         )";
                         dbcmd.ExecuteNonQuery();
@@ -109,6 +109,41 @@ namespace Bangazon
                 _connection.Close();
             }
         }
+        public void CheckPaymentTypeTable()
+        {
+            using (_connection)
+            {
+                _connection.Open();
+                SqliteCommand dbcmd = _connection.CreateCommand();
 
+                dbcmd.CommandText = $@"select id from PaymentType";
+
+                try
+                {
+                    using (SqliteDataReader reader = dbcmd.ExecuteReader())
+                    {
+                        Console.WriteLine("payment type table should exist");
+                    }
+                    dbcmd.Dispose();
+                }
+                catch (Microsoft.Data.Sqlite.SqliteException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    if (ex.Message.Contains("no such table"))
+                    {
+                        dbcmd.CommandText = $@"create table PaymentType (
+                            `PaymentTypeId` integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                            `CustomerId` integer NOT NULL,
+                            `PaymentMethod` string NOT NULL,
+                            `AccountNumber` integer NOT NULL,
+                            FOREIGN KEY(`CustomerId`) REFERENCES `customer`(`id`) 
+                        )";
+                        dbcmd.ExecuteNonQuery();
+                        dbcmd.Dispose();
+                    }
+                }
+                _connection.Close();
+            }
+        }
     }
 } 
