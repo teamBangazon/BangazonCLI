@@ -25,6 +25,7 @@ namespace Bangazon
             Console.WriteLine ("Welcome to Bangazon! Command Line Ordering System");
             Console.WriteLine ("*************************************************");
             Console.WriteLine ("1. Create a customer account");
+            Console.WriteLine ("2. Choose active customer");
             Console.Write ("> ");
             
 
@@ -37,6 +38,10 @@ namespace Bangazon
             {
              AddCustomerManager.AddCustomer(_ACSB);
             }  
+            if (choice == 2)
+            {
+                ChooseActiveCustomerManager.ChooseActiveCustomer();
+            }
                    
         
         }
