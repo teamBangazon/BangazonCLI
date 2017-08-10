@@ -10,21 +10,19 @@ using Bangazon.StringBuilders;
 
 namespace Bangazon.Managers
 {
-    public class AddPaymentTypeManager
+    public class PaymentTypeManager
     {
-        public static void AddPaymentType(AddPaymentTypeStringBuilder SB)
+    private DatabaseInterface _db;
+    public PaymentTypeManager(DatabaseInterface db)
+    {
+        _db = db; 
+    }
+        public int AddPaymentType(PaymentType _paytype)
         {
-        PaymentType New = new PaymentType();  
-        New.id = ChooseActiveCustomerManager.activeCustomer;
-        Console.WriteLine ("Enter payment method:");
-        Console.Write ("> ");
-        New.PaymentMethod = Console.ReadLine();
-        Console.WriteLine ("Enter account number:");
-        Console.Write ("> ");
-        New.AccountNumber = Int32.Parse(Console.ReadLine());     
-        SB.AddPaymentType(New);
-        Menus.MainMenu();
-        }      
+            string paymentTypeString = $"insert into PaymentType values (null, {_paytype.AccountNumber}, '{_paytype.PaymentMethod}', '{ChooseActiveCustomerManager.activeCustomer}');";
+            var Z = _db.Insert(paymentTypeString);
+            return Z;
+        }
     }
 
 }

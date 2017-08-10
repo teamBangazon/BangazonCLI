@@ -18,9 +18,12 @@ namespace Bangazon
             // Seed the database if none exists
             DatabaseInterface db = new DatabaseInterface("BANGAZONCLI_DB");
             db.CheckCustomerTable();
+            AddCustomerMenu _ACSB = new AddCustomerMenu();
+            db.CheckProductTable();
+            AddProductMenu _APSB = new AddProductMenu();
             db.CheckPaymentTypeTable();
-            AddCustomerStringBuilder _ACSB = new AddCustomerStringBuilder(db);
-            AddPaymentTypeStringBuilder _APTSB = new AddPaymentTypeStringBuilder(db);
+            AddPaymentTypeMenu _APTSB = new AddPaymentTypeMenu(); //change to menu
+
             
             Console.WriteLine ("*************************************************");
             Console.WriteLine ("Welcome to Bangazon! Command Line Ordering System");
@@ -28,6 +31,8 @@ namespace Bangazon
             Console.WriteLine ("1. Create a customer account");
             Console.WriteLine ("2. Choose active customer");
             Console.WriteLine ("3. Create a Payment Type for Active Customer");
+            Console.WriteLine ("4. Create product for active customer");
+            
             Console.Write ("> ");
             
 
@@ -38,16 +43,20 @@ namespace Bangazon
             // If option 1 was chosen, create a new customer account
             if (choice == 1)
             {
-             AddCustomerManager.AddCustomer(_ACSB);
-            }  
+                _ACSB.AddCustomerStringBuilder(new CustomerManager(db)); // public void AddCustomerStringBuilder
+            }
             if (choice == 2)
             {
                 ChooseActiveCustomerManager.ChooseActiveCustomer();
             }
             if (choice == 3)
             {
-                AddPaymentTypeManager.AddPaymentType(_APTSB);
+                _APTSB.AddPaymentTypeStringBuilder(new PaymentTypeManager(db));
             }
+            if (choice == 4)
+            {
+                _APSB.AddProductStringBuilder(new ProductManager(db));  //public void AddProductStringBuilder
+            }  
                    
         
         }

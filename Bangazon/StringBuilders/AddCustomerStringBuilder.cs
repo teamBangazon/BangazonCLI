@@ -1,21 +1,38 @@
 using System;
 using System.Collections.Generic;
+using Bangazon.Managers;
 using Bangazon.Models;
 
 namespace Bangazon.StringBuilders
 {
-    public class AddCustomerStringBuilder
+    public class AddCustomerMenu
     {
-    private DatabaseInterface _db;
-    public AddCustomerStringBuilder(DatabaseInterface db)
-    {
-        _db = db;
-    }
-        public int AddCustomer(Customer _custy)
+        public void AddCustomerStringBuilder(CustomerManager SB)
         {
-            string customerString = $"INSERT into Customer VALUES (null, '{_custy.FirstName}', '{_custy.LastName}', '{_custy.Street}', '{_custy.City}', '{_custy.State}', '{_custy.ZipCode}', '{_custy.PhoneNumber}');";
-            var Y = _db.Insert(customerString);
-            return Y;
-        }
+        Customer customer = new Customer();  
+        Console.WriteLine ("Enter customer first name");
+        Console.Write ("> ");
+        customer.FirstName = Console.ReadLine();
+        Console.WriteLine ("Enter customer last name");
+        Console.Write ("> ");
+        customer.LastName = Console.ReadLine();
+        Console.WriteLine ("Enter customer Street");
+        Console.Write ("> ");    
+        customer.Street = Console.ReadLine();
+        Console.WriteLine ("Enter customer City");
+        Console.Write ("> ");
+        customer.City = Console.ReadLine();
+        Console.WriteLine ("Enter customer State");
+        Console.Write ("> ");
+        customer.State = Console.ReadLine();
+        Console.WriteLine ("Enter customer postal code");
+        Console.Write ("> ");
+        customer.ZipCode = Int32.Parse(Console.ReadLine());
+        Console.WriteLine ("Enter customer phone number");
+        Console.Write ("> ");
+        customer.PhoneNumber = Console.ReadLine();     
+        SB.AddCustomer(customer);
+        Menus.MainMenu();
+        }      
     }
 }

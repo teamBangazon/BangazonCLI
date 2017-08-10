@@ -132,11 +132,49 @@ namespace Bangazon
                     if (ex.Message.Contains("no such table"))
                     {
                         dbcmd.CommandText = $@"create table PaymentType (
-                            `PaymentTypeId` integer NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            `CustomerId` integer NOT NULL,
+                            `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT,
                             `PaymentMethod` string NOT NULL,
                             `AccountNumber` integer NOT NULL,
-                            FOREIGN KEY(`CustomerId`) REFERENCES `customer`(`id`) 
+                            `CustomerId` integer NOT NULL,
+                             FOREIGN KEY(`CustomerId`) REFERENCES `customer`(`id`)
+                        )";
+                        dbcmd.ExecuteNonQuery();
+                        dbcmd.Dispose();
+                    }
+                }
+                _connection.Close();
+            }
+        }
+        public void CheckProductTable()
+        {
+            using (_connection)
+            {
+                _connection.Open();
+                SqliteCommand dbcmd = _connection.CreateCommand();
+
+                dbcmd.CommandText = $@"select id from product";
+
+                try
+                {
+                    using (SqliteDataReader reader = dbcmd.ExecuteReader())
+                    {
+                        Console.WriteLine("reading db, tbl should exist");
+                    }
+                    dbcmd.Dispose();
+                }
+                catch (Microsoft.Data.Sqlite.SqliteException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    if (ex.Message.Contains("no such table"))
+                    {
+                        dbcmd.CommandText = $@"create table product (
+                            `id`    integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                            `name`  string not null,
+                            `description`   string not null,
+                            `price`    string not null,
+                            `producttype`   string not null,
+                            `customerId` integer not null,
+                             FOREIGN KEY(`customerId`) REFERENCES `customer`(`id`)
                         )";
                         dbcmd.ExecuteNonQuery();
                         dbcmd.Dispose();
