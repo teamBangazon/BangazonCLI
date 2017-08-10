@@ -4,6 +4,7 @@ namespace Bangazon
     {
         static void Main(string[] args)
         {
+        
         // Present the main menu
         Menus.MainMenu();
         }
