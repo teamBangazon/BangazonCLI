@@ -18,6 +18,7 @@ namespace Bangazon
             // Seed the database if none exists
             DatabaseInterface db = new DatabaseInterface("BANGAZONCLI_DB");
             db.CheckCustomerTable();
+            db.CheckPaymentTypeTable();
             AddCustomerStringBuilder _ACSB = new AddCustomerStringBuilder(db);
 
             

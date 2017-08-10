@@ -10,14 +10,14 @@ namespace Bangazon.Tests
 
         public PaymentTypeShould()
         {
-            _paymentType = new PaymentType("Visa", "5555-3424-8999-1111");
+            _paymentType = new PaymentType("Visa", 203092098);
         }
 
         [Fact]
         public void addPaymentType()
         {
             Assert.Equal(_paymentType.PaymentMethod, "Visa");
-            Assert.Equal(_paymentType.AccountNumber, "5555-3424-8999-1111");
+            Assert.Equal(_paymentType.AccountNumber, 203092098);
         }
     }
 }

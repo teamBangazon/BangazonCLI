@@ -116,7 +116,7 @@ namespace Bangazon
                 _connection.Open();
                 SqliteCommand dbcmd = _connection.CreateCommand();
 
-                dbcmd.CommandText = $@"select id from customer";
+                dbcmd.CommandText = $@"select id from PaymentType";
 
                 try
                 {
@@ -132,8 +132,9 @@ namespace Bangazon
                     if (ex.Message.Contains("no such table"))
                     {
                         dbcmd.CommandText = $@"create table PaymentType (
-                            `PaymentMethod` string NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            `AccountNumber` int not null
+                            `PaymentTypeId` integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                            `PaymentMethod` string NOT NULL,
+                            `AccountNumber` integer NOT NULL
                         )";
                         dbcmd.ExecuteNonQuery();
                         dbcmd.Dispose();

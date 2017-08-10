@@ -20,8 +20,8 @@ namespace Bangazon.Managers
         New.PaymentMethod = Console.ReadLine();
         Console.WriteLine ("Enter account number:");
         Console.Write ("> ");
-        New.AccountNumber = Console.ReadLine();     
-        AddPaymentTypeStringBuilder.AddPaymentType(New);
+        New.AccountNumber = Int32.Parse(Console.ReadLine());     
+        SB.AddPaymentType(New);
         Menus.MainMenu();
         }      
     }
