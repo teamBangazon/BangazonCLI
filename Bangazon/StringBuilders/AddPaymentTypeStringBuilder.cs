@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Bangazon.Models;
+using Bangazon.Managers;
 
 namespace Bangazon.StringBuilders
 {
@@ -13,9 +14,9 @@ namespace Bangazon.StringBuilders
     }
         public int AddPaymentType(PaymentType _paytype)
         {
-            string paymentTypeString = $"insert into PaymentType values (null, '{_paytype.PaymentMethod}', '{_paytype.AccountNumber}');";
+            string paymentTypeString = $"insert into PaymentType values (null, '{ChooseActiveCustomerManager.activeCustomer}', '{_paytype.PaymentMethod}', '{_paytype.AccountNumber}');";
             var Z = _db.Insert(paymentTypeString);
-            return 3;
+            return Z;
         }
     }
 }

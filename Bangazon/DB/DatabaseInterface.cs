@@ -133,6 +133,7 @@ namespace Bangazon
                     {
                         dbcmd.CommandText = $@"create table PaymentType (
                             `PaymentTypeId` integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                            `CustomerId` integer NOT NULL,
                             `PaymentMethod` string NOT NULL,
                             `AccountNumber` integer NOT NULL
                         )";

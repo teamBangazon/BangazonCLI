@@ -13,7 +13,7 @@ using Microsoft.Data.Sqlite;
 //  ListOfCustomers: Queries the DB and adds Customer's id, FirstName and LastName to customers list.
 //  ChooseActiveCustomer: Prints list of Customers to the console and reads/saves user input of id as activeCustomer, then loads MainMenu.
 
-namespace Bangazon.Managers
+namespace Bangazon
 {
     public class ChooseActiveCustomerManager
     {

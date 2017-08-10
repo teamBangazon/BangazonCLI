@@ -15,6 +15,7 @@ namespace Bangazon.Managers
         public static void AddPaymentType(AddPaymentTypeStringBuilder SB)
         {
         PaymentType New = new PaymentType();  
+        New.id = ChooseActiveCustomerManager.activeCustomer;
         Console.WriteLine ("Enter payment method:");
         Console.Write ("> ");
         New.PaymentMethod = Console.ReadLine();

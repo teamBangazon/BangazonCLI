@@ -20,13 +20,14 @@ namespace Bangazon
             db.CheckCustomerTable();
             db.CheckPaymentTypeTable();
             AddCustomerStringBuilder _ACSB = new AddCustomerStringBuilder(db);
-
+            AddPaymentTypeStringBuilder _APTSB = new AddPaymentTypeStringBuilder(db);
             
             Console.WriteLine ("*************************************************");
             Console.WriteLine ("Welcome to Bangazon! Command Line Ordering System");
             Console.WriteLine ("*************************************************");
             Console.WriteLine ("1. Create a customer account");
             Console.WriteLine ("2. Choose active customer");
+            Console.WriteLine ("3. Create a Payment Type for Active Customer");
             Console.Write ("> ");
             
 
@@ -42,6 +43,10 @@ namespace Bangazon
             if (choice == 2)
             {
                 ChooseActiveCustomerManager.ChooseActiveCustomer();
+            }
+            if (choice == 3)
+            {
+                AddPaymentTypeManager.AddPaymentType(_APTSB);
             }
                    
         
