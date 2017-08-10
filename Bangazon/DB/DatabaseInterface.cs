@@ -99,7 +99,7 @@ namespace Bangazon
                             `street`    string not null,
                             `city`      string not null,
                             `state`      string not null,
-                            `zipcode`     interger not null,
+                            `zipcode`     integer not null,
                             `phonenumber`   string not null
                         )";
                         dbcmd.ExecuteNonQuery();
