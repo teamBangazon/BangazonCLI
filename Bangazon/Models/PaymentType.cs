@@ -10,12 +10,16 @@ namespace Bangazon.Models
     public class PaymentType
     {
         public string PaymentMethod { get; set; }
-        public int AccountNumber { get; set; }
+        public string AccountNumber { get; set; }
 
-         public PaymentType(string customerPaymentMethod, int customerAccountNumber)
+         public PaymentType(string customerPaymentMethod, string customerAccountNumber)
          {
             PaymentMethod = customerPaymentMethod;
             AccountNumber = customerAccountNumber;
+         }
+         public PaymentType () 
+         {
+
          }
     }
 }
