@@ -21,7 +21,7 @@ namespace Bangazon.Managers
     }
         public int AddProduct(Product _prod, Customer _cust)
         {
-            string productString = $"INSERT into Product VALUES (null, {_cust.id}, '{_prod.Name}', '{_prod.Description}', {_prod.Price}, '{_prod.ProductType}');";
+            string productString = $"INSERT into Product VALUES (null, '{_prod.Name}', '{_prod.Description}', {_prod.Price}, '{_prod.ProductType}', {ChooseActiveCustomerManager.activeCustomer});";
             var Y = _db.Insert(productString);
             return Y;
         }

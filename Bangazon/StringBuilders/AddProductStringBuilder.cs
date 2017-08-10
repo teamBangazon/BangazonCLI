@@ -16,9 +16,10 @@ namespace Bangazon.StringBuilders
         {
         Product newProduct = new Product();
         Customer newCustomer = new Customer();
-        Console.WriteLine ("Enter CustomerId.");
-        Console.Write ("> ");
-        newProduct.CustomerId = Int32.Parse(Console.ReadLine());
+        //newProduct.CustomerId = ChooseActiveCustomerManager.activeCustomer;
+        // Console.WriteLine ("Enter CustomerId.");
+        // Console.Write ("> ");
+        // newProduct.CustomerId = Int32.Parse(Console.ReadLine());
         Console.WriteLine ("Enter product name.");
         Console.Write ("> ");
         newProduct.Name = Console.ReadLine();

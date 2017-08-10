@@ -2,6 +2,7 @@ using System;
 using Bangazon.Models;
 using Bangazon.StringBuilders;
 using Xunit;
+using Bangazon.StringBuilders;
 
 namespace Bangazon.Tests
 {
