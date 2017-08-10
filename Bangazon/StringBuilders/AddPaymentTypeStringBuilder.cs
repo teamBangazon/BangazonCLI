@@ -7,9 +7,9 @@ namespace Bangazon.StringBuilders
     public class AddPaymentTypeStringBuilder
     {
     private DatabaseInterface _db;
-    public void AddPaymentTyperStringBuilder(DatabaseInterface db)
+    public AddPaymentTypeStringBuilder(DatabaseInterface db)
     {
-        _db = db;
+        _db = db; 
     }
         public int AddPaymentType(PaymentType _paytype)
         {

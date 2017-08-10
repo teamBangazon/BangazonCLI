@@ -7,7 +7,7 @@ namespace Bangazon.Tests
 {
     public class AddPaymentTypeStringBuilderManagerShould
     {
-    private DatabaseInterface _db;
+    private readonly DatabaseInterface _db;
     private AddPaymentTypeStringBuilder _kathy;
     public AddPaymentTypeStringBuilderManagerShould()
     {

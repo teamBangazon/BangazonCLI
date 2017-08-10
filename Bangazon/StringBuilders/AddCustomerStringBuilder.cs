@@ -2,9 +2,6 @@ using System;
 using System.Collections.Generic;
 using Bangazon.Models;
 
-//
-
-
 namespace Bangazon.StringBuilders
 {
     public class AddCustomerStringBuilder
@@ -20,8 +17,5 @@ namespace Bangazon.StringBuilders
             var Y = _db.Insert(customerString);
             return Y;
         }
-
-
     }
-
 }
