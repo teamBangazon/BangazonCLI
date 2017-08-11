@@ -32,7 +32,7 @@ namespace Bangazon.Managers
         public List<Product> GetAvailable()
         {   
             DatabaseInterface db = new DatabaseInterface("BANGAZONCLI_DB");
-            db.Query($"select * from product where customerId = {ChooseActiveCustomerManager.activeCustomer}",
+            db.Query($"select * from product",
             (SqliteDataReader reader) => {
                 availableProducts.Clear();
                 while (reader.Read())
