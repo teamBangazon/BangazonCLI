@@ -15,13 +15,17 @@ namespace Bangazon.Models
     {
         public int CustomerId { get; set; }
         public int PaymentTypeId { get; set; }
-        public List<int> ProductIdList { get; } = new List<int>();
 
-        public Order(int customerId)
+        public Order(int customerId, int paymentTypeId)
         {
-            CustomerId = customerId;  
+            CustomerId = customerId;
+            PaymentTypeId = paymentTypeId; 
         }
 
+        public Order()
+        {
+            
+        }
 
     }
 

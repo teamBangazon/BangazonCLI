@@ -183,5 +183,41 @@ namespace Bangazon
                 _connection.Close();
             }
         }
+        public void CheckOrderTable()
+        {
+            using (_connection)
+            {
+                _connection.Open();
+                SqliteCommand dbcmd = _connection.CreateCommand();
+
+                dbcmd.CommandText = $@"select id from `order`";
+
+                try
+                {
+                    using (SqliteDataReader reader = dbcmd.ExecuteReader())
+                    {
+                        Console.WriteLine("reading db, order tbl should exist");
+                    }
+                    dbcmd.Dispose();
+                }
+                catch (Microsoft.Data.Sqlite.SqliteException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    if (ex.Message.Contains("no such table"))
+                    {
+                        dbcmd.CommandText = $@"create table `order` (
+                            `id`    integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                            `paymenttypeid`   integer not null,
+                            `customerId` integer not null,
+                             FOREIGN KEY(`paymenttypeid`) REFERENCES `paymenttype`(`id`),
+                             FOREIGN KEY(`customerId`) REFERENCES `customer`(`id`)
+                        )";
+                        dbcmd.ExecuteNonQuery();
+                        dbcmd.Dispose();
+                    }
+                }
+                _connection.Close();
+            }
+        }
     }
 } 
