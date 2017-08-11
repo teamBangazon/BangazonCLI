@@ -16,8 +16,9 @@ namespace Bangazon.StringBuilders
         Console.Clear();
         Console.WriteLine ("Choose Product:");
         List<Product>products = null;
-        // add function once it is created to pull list of products here
-        foreach (var product in products)
+        // function to pull list of products to loop through
+        GetAvailable()
+        foreach (var product in availableProducts)
             {
                 Console.WriteLine($"{counter++} {product.Name}");
             }
