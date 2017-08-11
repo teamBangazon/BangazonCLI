@@ -23,7 +23,7 @@ namespace Bangazon
             AddProductMenu _APSB = new AddProductMenu();
             db.CheckPaymentTypeTable();
             AddPaymentTypeMenu _APTSB = new AddPaymentTypeMenu(); //change to menu
-
+            db.CheckOrderProductTable();
             
             Console.WriteLine ("*************************************************");
             Console.WriteLine ("Welcome to Bangazon! Command Line Ordering System");
