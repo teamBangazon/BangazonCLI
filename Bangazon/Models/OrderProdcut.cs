@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
-//Class: Order
-//Purpose: Used to store Customer's Order
+//Class: OrderProduct
+//Purpose: Used to store individual products that have been added to orders i.e. Invoice line item
 //Author: Team One to What
 //Properties:
 //  CustomerId: CustomerId of customer purchasing Order
@@ -11,22 +11,16 @@ using System.Collections.Generic;
 namespace Bangazon.Models
 
 {
-    public class Order
+    public class OrderProduct
     {
-        public int CustomerId { get; set; }
-        public int PaymentTypeId { get; set; }
+        public int OrderId { get; set; }
+        public int ProductId { get; set; }
 
-        public Order(int customerId, int paymentTypeId)
+        public OrderProduct(int customerId, int productId)
         {
-            CustomerId = customerId;
-            PaymentTypeId = paymentTypeId; 
+            OrderId = customerId; 
+            ProductId = productId; 
         }
-
-        public Order()
-        {
-            
-        }
-
     }
 
 }
