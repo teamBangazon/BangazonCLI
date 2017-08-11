@@ -68,7 +68,6 @@ namespace Bangazon
             }
             return insertedItemId;
         }
-
         
         public void CheckCustomerTable()
         {
