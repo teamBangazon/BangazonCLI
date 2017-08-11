@@ -24,7 +24,7 @@ namespace Bangazon
             db.CheckPaymentTypeTable();
             AddPaymentTypeMenu _APTSB = new AddPaymentTypeMenu();
             db.CheckOrderTable();
-            //AddOrderMenu _AOM = new AddOrderMenu();
+            AddOrderMenu _AOM = new AddOrderMenu();
            
             db.CheckOrderProductTable();
          
@@ -63,6 +63,10 @@ namespace Bangazon
             {
                 _APSB.AddProductStringBuilder(new ProductManager(db));  //public void AddProductStringBuilder
             } 
+            if (choice == 6)
+            {
+                _AOM.AddOrderStringBuilder(new ProductManager(db));
+            }
         }
     }
 }

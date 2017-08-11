@@ -7,24 +7,34 @@ namespace Bangazon.StringBuilders
 {
     public class AddOrderMenu
     {
+        //private ProductManager _pm;
 
         // add product to customer's cart
-        public void AddOrderStringBuilder(OrderManager SB)
+        public void AddOrderStringBuilder(ProductManager _pm)
         {
-        Order order = new Order();
+         Console.Clear();   
+         int X;
+        //Order order = new Order();
+        //Placeholder for product Id
         var counter = 1;
         Console.Clear();
         Console.WriteLine ("Choose Product:");
         List<Product>products = null;
         // function to pull list of products to loop through
-        GetAvailable()
-        foreach (var product in availableProducts)
+        products = _pm.GetAvailable();
+        foreach (var product in products)
             {
-                Console.WriteLine($"{counter++} {product.Name}");
+                Console.WriteLine($"{product.id}. {product.Name}");
+                counter++;
             }
         Console.WriteLine($"Press {counter} to quit");
-        Console.Write ("> ");  
-        SB.AddOrder(order);
+        Console.Write ("> "); 
+        X = Int32.Parse(Console.ReadLine()); 
+        if (X == counter)
+        {
+           Menus.MainMenu();
+        }
+        //SB.AddOrder(order);
         Menus.MainMenu();
         }      
     }
