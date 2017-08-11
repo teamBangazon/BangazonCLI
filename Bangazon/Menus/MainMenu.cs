@@ -25,6 +25,8 @@ namespace Bangazon
             AddPaymentTypeMenu _APTSB = new AddPaymentTypeMenu();
             db.CheckOrderTable();
             //AddOrderMenu _AOM = new AddOrderMenu();
+            AddPaymentTypeMenu _APTSB = new AddPaymentTypeMenu(); //change to menu
+            db.CheckOrderProductTable();
 
             
             Console.WriteLine ("*************************************************");
