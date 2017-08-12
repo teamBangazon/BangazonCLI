@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using Bangazon.Managers;
 using Bangazon.Models;
 
-//
+// This "StringBuilder" constitutes the menu for adding a Product.
+//User is prompted with a series of options and then is returned to the main menu.
 
 
 namespace Bangazon.StringBuilders
@@ -16,10 +17,6 @@ namespace Bangazon.StringBuilders
         {
         Product newProduct = new Product();
         Customer newCustomer = new Customer();
-        //newProduct.CustomerId = ChooseActiveCustomerManager.activeCustomer;
-        // Console.WriteLine ("Enter CustomerId.");
-        // Console.Write ("> ");
-        // newProduct.CustomerId = Int32.Parse(Console.ReadLine());
         Console.WriteLine ("Enter product name.");
         Console.Write ("> ");
         newProduct.Name = Console.ReadLine();

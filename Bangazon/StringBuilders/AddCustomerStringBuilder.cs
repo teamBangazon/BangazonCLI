@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using Bangazon.Managers;
 using Bangazon.Models;
 
+// This "StringBuilder" constitutes the menu for adding a Customer.
+//User is prompted with a series of options and then is returned to the main menu.
+
+
 namespace Bangazon.StringBuilders
 {
     public class AddCustomerMenu

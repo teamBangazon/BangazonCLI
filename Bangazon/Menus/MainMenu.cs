@@ -22,7 +22,11 @@ namespace Bangazon
             db.CheckProductTable();
             AddProductMenu _APSB = new AddProductMenu();
             db.CheckPaymentTypeTable();
+            AddPaymentTypeMenu _APTSB = new AddPaymentTypeMenu();
+            db.CheckOrderTable();
+            //AddOrderMenu _AOM = new AddOrderMenu();
             AddPaymentTypeMenu _APTSB = new AddPaymentTypeMenu(); //change to menu
+            db.CheckOrderProductTable();
 
             
             Console.WriteLine ("*************************************************");
@@ -32,6 +36,7 @@ namespace Bangazon
             Console.WriteLine ("2. Choose active customer");
             Console.WriteLine ("3. Create a Payment Type for Active Customer");
             Console.WriteLine ("4. Create product for active customer");
+            Console.WriteLine ("5. Add product to customer order");
             
             Console.Write ("> ");
             
@@ -56,7 +61,11 @@ namespace Bangazon
             if (choice == 4)
             {
                 _APSB.AddProductStringBuilder(new ProductManager(db));  //public void AddProductStringBuilder
-            }  
+            }
+            // if (choice == 5)
+            // {
+            //     _AOM.AddOrderStringBuilder(new ProductManager(db));  //public void AddProductStringBuilder
+            // }  
                    
         
         }
