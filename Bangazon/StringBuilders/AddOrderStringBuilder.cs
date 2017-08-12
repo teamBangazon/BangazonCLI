@@ -9,6 +9,7 @@ namespace Bangazon.StringBuilders
     {
         //private ProductManager _pm;
 
+
         // add product to customer's cart
         public void AddOrderStringBuilder(ProductManager _pm)
         {
@@ -37,5 +38,10 @@ namespace Bangazon.StringBuilders
         //SB.AddOrder(order);
         Menus.MainMenu();
         }      
+
+        public void checkToSeeIfCurrentOrder()
+        {
+            
+        }
     }
 }

@@ -220,7 +220,6 @@ namespace Bangazon
             }
         }
 
-
          public void CheckOrderProductTable()
         {
             using (_connection)
