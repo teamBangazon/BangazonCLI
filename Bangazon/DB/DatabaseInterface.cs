@@ -207,7 +207,7 @@ namespace Bangazon
                     {
                         dbcmd.CommandText = $@"create table `order` (
                             `id`    integer NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            `paymenttypeid`   integer not null,
+                            `paymenttypeid`   integer,
                             `customerId` integer not null,
                              FOREIGN KEY(`paymenttypeid`) REFERENCES `paymenttype`(`id`),
                              FOREIGN KEY(`customerId`) REFERENCES `customer`(`id`)

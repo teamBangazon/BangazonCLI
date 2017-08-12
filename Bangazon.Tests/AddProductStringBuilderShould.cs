@@ -18,8 +18,6 @@ namespace Bangazon.Tests
             _db = new DatabaseInterface("BANGAZONCLI_DB");
             _db.CheckProductTable();
             _product = new ProductManager(_db);
-<<<<<<< HEAD
-=======
         }
 
         [Fact]
@@ -27,7 +25,6 @@ namespace Bangazon.Tests
         {
             var Z = _product.GetAvailable();
             Assert.IsType<List<Product>>(Z);
->>>>>>> origin/dylan7
         }
     }
 }

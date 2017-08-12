@@ -16,16 +16,15 @@ namespace Bangazon.Tests
         [Fact]
         public void AddProductToOrderShould()
         {
-            Product _newProduct = new Product(1, "Testing", "This is a test", 1234, "still a test");
-            var result = OrderManager.AddProductToOrder(_newProduct);
-            Assert.Equal(result, 3);
+            var result = OrderManager.AddProductToOrder(2, 5);
+            Assert.IsType<int>(result);
         }
 
         [Fact]
-        public void DoesOrderExistShould()
-        {
-            var result = OrderManager.DoesOrderExist(1);
-            Assert.IsType<bool>(result);
+        public void GetCurrentOrderShould()
+        {   
+            var result = OrderManager.GetCurrentOrder(1);
+            Assert.NotEqual(null, result);
         }
     }
 }
