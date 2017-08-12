@@ -16,7 +16,7 @@ namespace Bangazon.Tests
         [Fact]
         public void AddProductToOrderShould()
         {
-            var result = OrderManager.AddProductToOrder(2, 5);
+            var result = OrderManager.AddProductToOrder(1, 1);
             Assert.IsType<int>(result);
         }
 
