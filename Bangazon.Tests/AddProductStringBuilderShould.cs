@@ -2,6 +2,7 @@ using System;
 using Bangazon.Managers;
 using Bangazon.Models;
 using Bangazon.StringBuilders;
+using System.Collections.Generic;
 using Xunit;
 
 namespace Bangazon.Tests
@@ -17,6 +18,16 @@ namespace Bangazon.Tests
             _db = new DatabaseInterface("BANGAZONCLI_DB");
             _db.CheckProductTable();
             _product = new ProductManager(_db);
+<<<<<<< HEAD
+=======
+        }
+
+        [Fact]
+        public void GetAvailableshould()
+        {
+            var Z = _product.GetAvailable();
+            Assert.IsType<List<Product>>(Z);
+>>>>>>> origin/dylan7
         }
     }
 }
