@@ -37,13 +37,7 @@ namespace Bangazon.Managers
                 availableProducts.Clear();
                 while (reader.Read())
                 {
-                    availableProducts.Add(new Product(){
-                        id = reader.GetInt32(0),
-                        Name = reader[2].ToString(),
-                        Description = reader[3].ToString(),
-                        Price = reader.GetInt32(4),
-                        ProductType = reader[5].ToString()
-                    });
+                    
                 }
             });
             return availableProducts;
