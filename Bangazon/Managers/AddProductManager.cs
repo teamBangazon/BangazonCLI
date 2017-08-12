@@ -48,5 +48,25 @@ namespace Bangazon.Managers
             });
             return availableProducts;
         }
+
+        public List<Product> GetAcitveCustomerAvailable()
+        {   
+            DatabaseInterface db = new DatabaseInterface("BANGAZONCLI_DB");
+            db.Query($"select * from product WHERE CustomerId = {ChooseActiveCustomerManager.activeCustomer}",
+            (SqliteDataReader reader) => {
+                availableProducts.Clear();
+                while (reader.Read())
+                {
+                    availableProducts.Add(new Product(){
+                        id = reader.GetInt32(0),
+                        Name = reader[2].ToString(),
+                        Description = reader[3].ToString(),
+                        Price = reader.GetInt32(4),
+                        ProductType = reader[5].ToString()
+                    });
+                }
+            });
+            return availableProducts;
+        }
     }
 }

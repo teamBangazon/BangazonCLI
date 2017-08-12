@@ -13,9 +13,9 @@ namespace Bangazon.StringBuilders
         public void AddOrderStringBuilder(ProductManager _pm)
         {
          Console.Clear();   
-         int X;
-        //Order order = new Order();
-        //Placeholder for product Id
+        int X;
+        Order order = new Order();
+        order.CustomerId = ChooseActiveCustomerManager.activeCustomer;
         var counter = 1;
         Console.Clear();
         Console.WriteLine ("Choose Product:");

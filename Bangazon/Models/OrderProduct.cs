@@ -22,5 +22,5 @@ namespace Bangazon.Models
             ProductId = productId; 
         }
     }
-
+    
 }
