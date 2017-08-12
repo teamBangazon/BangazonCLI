@@ -18,7 +18,14 @@ namespace Bangazon.Tests
         {
             Product _newProduct = new Product(1, "Testing", "This is a test", 1234, "still a test");
             var result = OrderManager.AddProductToOrder(_newProduct);
-            Assert.IsType<int>(result);
+            Assert.Equal(result, 3);
+        }
+
+        [Fact]
+        public void DoesOrderExistShould()
+        {
+            var result = OrderManager.DoesOrderExist(1);
+            Assert.IsType<bool>(result);
         }
     }
 }
