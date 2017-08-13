@@ -6,7 +6,10 @@ using Microsoft.Data.Sqlite;
 //Class: OrderManager
 //Purpose: 
 //Author: Team One to What
+//Properties:
+//  currentOrder: nullable int to allow null assignment until completion of order
 //Methods:
+//  AddProductToOrder: Parameter(productId and activeCustomer) uses active customer to call GetCurrentOrder, identifying orderId to be added with productId to new OrderProduct
 //  CheckCurrentOrder: Checks to see if there is a current order for the active customer. Takes user input and generates new product, sends new product on to string builder
 
 namespace Bangazon.Managers
