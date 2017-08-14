@@ -10,6 +10,7 @@ namespace Bangazon.StringBuilders
             Console.Clear();
             int PID;
             StartDel:
+            string selection;
             Console.WriteLine("Choose a product to delete:");
             var products = productManager.GetSellers(ChooseActiveCustomerManager.activeCustomer);
             Console.WriteLine("0. Exit to Main Menu");
@@ -23,12 +24,13 @@ namespace Bangazon.StringBuilders
             {
                 Console.WriteLine("Item has been ordered, unable to delete");
                 Console.WriteLine("Return to main menu Y/N?");
-                
-                if(Console.ReadLine() == "Y" || Console.ReadLine() == "y")
+                selection = Console.ReadLine();
+                if(selection == "Y" || selection == "y")
                 {
                     Menus.MainMenu();
+
                 }
-                if(Console.ReadLine() == "N" || Console.ReadLine() == "n")
+                if(selection == "N" || selection == "n")
                 {
                     Console.Clear();
                     goto StartDel;
