@@ -29,12 +29,15 @@ namespace Bangazon.StringBuilders
                 }
                 if(Console.ReadLine() == "N" || Console.ReadLine() == "n")
                 {
+                    Console.Clear();
                     goto StartDel;
                 }
             }
             else
             {
-                Console.WriteLine("Can be deleted");
+                productManager.DeleteProd(PID);
+                Console.Clear();
+                Console.WriteLine("Product deleted");
                 goto StartDel;
 
             }
