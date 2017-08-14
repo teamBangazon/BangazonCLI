@@ -1,8 +1,7 @@
 using System;
 using Bangazon.Models;
-using Bangazon.StringBuilders;
 using Xunit;
-using Bangazon.StringBuilders;
+using Bangazon.Managers;
 
 namespace Bangazon.Tests
 {
@@ -10,13 +9,13 @@ namespace Bangazon.Tests
     {
     private readonly DatabaseInterface _db;
 
-    private AddCustomerStringBuilder _Dylan;
+    private CustomerManager _Dylan;
 
     public AddCustomerStringBuilderManagerShould()
     {
         _db = new DatabaseInterface("BANGAZONCLI_DB");
         _db.CheckCustomerTable();
-        _Dylan = new AddCustomerStringBuilder(_db);
+        _Dylan = new CustomerManager(_db);
     }
     
     [Fact]

@@ -69,6 +69,19 @@ namespace Bangazon
             return insertedItemId;
         }
 
+        public void Delete(string command)
+        {
+
+            using (_connection)
+            {
+                _connection.Open();
+                SqliteCommand dbcmd = _connection.CreateCommand();
+                dbcmd.CommandText = command;
+                dbcmd.ExecuteNonQuery();
+                dbcmd.Dispose();
+                _connection.Close();
+            }
+        }
         
         public void CheckCustomerTable()
         {
@@ -208,7 +221,7 @@ namespace Bangazon
                     {
                         dbcmd.CommandText = $@"create table `order` (
                             `id`    integer NOT NULL PRIMARY KEY AUTOINCREMENT,
-                            `paymenttypeid`   integer not null,
+                            `paymenttypeid`   integer,
                             `customerId` integer not null,
                              FOREIGN KEY(`paymenttypeid`) REFERENCES `paymenttype`(`id`),
                              FOREIGN KEY(`customerId`) REFERENCES `customer`(`id`)
