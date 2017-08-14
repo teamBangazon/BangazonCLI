@@ -77,6 +77,7 @@ namespace Bangazon
                 _connection.Open();
                 SqliteCommand dbcmd = _connection.CreateCommand();
                 dbcmd.CommandText = command;
+                dbcmd.ExecuteNonQuery();
                 dbcmd.Dispose();
                 _connection.Close();
             }

@@ -45,8 +45,8 @@ namespace Bangazon.Tests
         [Fact]
         public void DeleteProdShould()
         {
-            var D = _product.DeleteProd(7);
-            Assert.Equal(1, D);
+            var D = _product.DeleteProd(9);
+            Assert.Equal(9, D);
         }
     }
 }

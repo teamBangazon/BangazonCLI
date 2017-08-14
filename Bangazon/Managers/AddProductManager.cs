@@ -89,14 +89,14 @@ namespace Bangazon.Managers
         {
             int deletedprod = 0;
             DatabaseInterface db = new DatabaseInterface("BANGAZONCLI_DB");
-            // db.Query($"select product.id, product.name from product where product.id = {productid}",
-            // (SqliteDataReader reader) => {
-            //     while(reader.Read())
-            //     {
-            //         deletedprod = reader.GetInt32(0);
-            //     }
-            // });
-            db.Delete($"delete from product where product.id = {productid}");
+            db.Query($"select product.id, product.name from product where product.id = {productid}",
+            (SqliteDataReader reader) => {
+                while(reader.Read())
+                {
+                    deletedprod = reader.GetInt32(0);
+                }
+            });
+            db.Delete($"delete from product where product.id is {productid}");
             return deletedprod;
         }
     }
