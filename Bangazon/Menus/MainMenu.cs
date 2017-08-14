@@ -62,6 +62,10 @@ namespace Bangazon
             if (choice == 4)
             {
                 _APSB.AddProductStringBuilder(new ProductManager(db));  //public void AddProductStringBuilder
+            }
+            if (choice == 5)
+            {
+                _AOM.AddOrderStringBuilder(new ProductManager(db));
             } 
             if (choice == 6)
             {

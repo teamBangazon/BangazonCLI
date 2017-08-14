@@ -34,8 +34,11 @@ namespace Bangazon.StringBuilders
         {
            Menus.MainMenu();
         }
-        //SB.AddOrder(order);
-        Menus.MainMenu();
+        else
+        {
+            OrderManager.AddProductToOrder(X, ChooseActiveCustomerManager.activeCustomer);
+            AddOrderStringBuilder(_pm);
+        }
         }      
     }
 }
