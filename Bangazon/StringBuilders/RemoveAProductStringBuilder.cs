@@ -12,6 +12,7 @@ namespace Bangazon.StringBuilders
             StartDel:
             Console.WriteLine("Choose a product to delete:");
             var products = productManager.GetSellers(ChooseActiveCustomerManager.activeCustomer);
+            Console.WriteLine("0. Exit to Main Menu");
             foreach (var product in products)
             {
                 Console.WriteLine($"{product.id}. {product.Name}");
@@ -32,6 +33,10 @@ namespace Bangazon.StringBuilders
                     Console.Clear();
                     goto StartDel;
                 }
+            }
+            else if(PID == 0)
+            {
+                Menus.MainMenu();
             }
             else
             {
