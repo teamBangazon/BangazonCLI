@@ -26,5 +26,27 @@ namespace Bangazon.Tests
             var Z = _product.GetAvailable();
             Assert.IsType<List<Product>>(Z);
         }
+
+        [Fact]
+        public void GetSellersShould()
+        {
+            var S = _product.GetSellers(2);
+            Assert.IsType<List<Product>>(S);
+        }
+
+        [Fact]
+        public void CheckIfProdOnOrderShould()
+        {
+            var P = _product.CheckIfProdOnOrder(1);
+            Assert.IsType<bool>(P);
+            Assert.True(P);
+        }
+
+        [Fact]
+        public void DeleteProdShould()
+        {
+            var D = _product.DeleteProd(7);
+            Assert.Equal(1, D);
+        }
     }
 }

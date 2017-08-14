@@ -25,8 +25,8 @@ namespace Bangazon
             AddPaymentTypeMenu _APTSB = new AddPaymentTypeMenu();
             db.CheckOrderTable();
             AddOrderMenu _AOM = new AddOrderMenu();
-           
             db.CheckOrderProductTable();
+            RemoveProductMenu _RPM = new RemoveProductMenu();
          
 
             
@@ -39,6 +39,7 @@ namespace Bangazon
             Console.WriteLine ("4. Create product for active customer");
             Console.WriteLine ("5. Add product to customer order");
             Console.WriteLine ("6. See Available Products");
+            Console.WriteLine ("7. Delete a customer's product");
             Console.Write ("> ");
             
 
@@ -70,6 +71,14 @@ namespace Bangazon
             if (choice == 6)
             {
                 _AOM.AddOrderStringBuilder(new ProductManager(db));
+            }
+            if (choice == 7)
+            {
+                _RPM.RemoveAProductStringBuilder(new ProductManager(db));
+            }
+            else
+            {
+                MainMenu();
             }
         }
     }

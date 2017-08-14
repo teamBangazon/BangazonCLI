@@ -68,6 +68,19 @@ namespace Bangazon
             }
             return insertedItemId;
         }
+
+        public void Delete(string command)
+        {
+
+            using (_connection)
+            {
+                _connection.Open();
+                SqliteCommand dbcmd = _connection.CreateCommand();
+                dbcmd.CommandText = command;
+                dbcmd.Dispose();
+                _connection.Close();
+            }
+        }
         
         public void CheckCustomerTable()
         {
