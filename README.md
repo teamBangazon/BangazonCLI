@@ -65,10 +65,12 @@ Welcome to Bangazon! Command Line Ordering System
 5. Add a product to the shopping cart
 6. Complete an order
 7. Remove customer product
-8. Update product information
-9. Show stale products
-10. Review revenue report for a customer
-12. Leave Bangazon CLI
+8. Update product information*
+9. Show stale products*
+10. Review revenue report for a customer*
+12. Leave Bangazon CLI*
+
+* Options not available in Bangazon Command Line Operating System Version 1.0
 
 ### Option 1. Create a customer account
 Allows the user to create a new customer account.
@@ -88,11 +90,12 @@ Once an active customer is chosen, the user can post a product for sale. User is
 Checks for an open shopping cart for the active customer and creates one if needed. Available products are listed and the user can add these to the shopping cart.
 
 ### Option 6. Complete an order
-After adding a product to the cart, this option lists payment types for the customer. The user can complete an order by choosing a desired payment type..
-
-## The following options are not available in this version of Bangazon CLI (Version 1.0).
+After adding a product to the cart, this option lists payment types for the customer. The user can complete an order by choosing a desired payment type. 
 
 ### Option 7. Remove customer product
+After choosing an active customer, this option lists products that can be removed. The user can select a product to remove.
+
+## The following options are not available in this version of Bangazon CLI (Version 1.0).
 
 ### Option 8. Update product information
 
